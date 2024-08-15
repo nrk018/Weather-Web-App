@@ -1,0 +1,112 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%),
+                linear-gradient(45deg, #0f0f0f 25%, #1a1a1a 50%, #0f0f0f 75%);
+    display: flex; /* display at flex's functionality is to make the parent element a flex container */
+    padding: 0;
+    align-items: center; /* align-items center property makes  the flex container's items align in the center of the cross axis */
+    justify-content: center; /* justify-content center property makes the flex container's items align in the center of the main axis */
+    height: 100vh; /* vh is a unit that represents the viewport height */ /* viewport height means the height of the browser window */
+    margin: 0; /* margin 0 property removes the default margin of the body */
+}
+
+#weather-container{
+    background: rgba(255, 255, 255, 0.1); /* rgba is a color property that allows you to set the color and transparency of an element */
+    border-radius: 10px; /* border-radius property is used to create rounded corners */
+    padding: 20px; /* padding property is used to generate space around an element's content, inside of any defined borders */
+    text-align: center; /* text-align center property is used to align the text in the center */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* the 0 0 10px means that the shadow will be 0px on the x-axis, 0px on the y-axis, and 10px of blur */
+    backdrop-filter: blur(10px); /* backdrop-filter property is used to apply filter effects to the area behind an element */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* border property is used to set the border of an element */
+   
+}
+
+h2 , label, p{
+    color: white; /* color property is used to set the color of the text */
+    margin: 8px 0; /* margin 8px 0 property sets the margin of the top and bottom of the element to 8px and the left and right to 0 */
+}
+
+input{
+    width: calc(100% - 16px); /* calc() function is used to perform calculations in CSS here it is 100% - 16px which means the width of the input will be 100% of the parent element's width minus 16px */
+    padding: 8px; /* padding 8px property sets the padding of the input element to 8px */
+    box-sizing: border-box; /* box-sizing border-box property is used to include the padding and border in the element's total width and height */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* border property is used to set the border of an element */
+    border-radius: 5px; /* border-radius property is used to create rounded corners */
+    margin-top: 20px; /* margin-top 20px property sets the margin of the top of the element to 20px */
+}
+
+button{
+    background: #007bff; /* background property is used to set the background color of an element */
+    color: white; /* color property is used to set the color of the text */
+    padding: 8px 16px; /* padding 8px 16px property sets the padding of the top and bottom of the element to 8px and the left and right to 16px */
+    border: none; /* border property is used to set the border of an element */
+    border-radius: 5px; /* border-radius property is used to create rounded corners */
+    margin-top: 20px; /* margin-top 20px property sets the margin of the top of the element to 20px */
+    cursor: pointer; /* cursor property is used to set the type of cursor to be displayed when pointing on an element */
+    font-size: 16px; /* font-size property is used to set the size of the text */
+}
+
+button:hover{
+    background: #0056b3; /* background property is used to set the background color of an element */
+}
+
+#temp-div p {
+    font-size: 60px; 
+    margin-top: -30px; /* margin-top -30px property sets the margin of the top of the element to -30px */
+}
+
+
+#weather-info{
+    font-size: 50px; 
+}
+
+#weather-icon {
+    width: 100px; /* width property is used to set the width of an element */
+    height: 100px; /* height property is used to set the height of an element */
+    margin: 10px auto 10px; /* margin 0px auto 10px property sets the margin of the top and bottom of the element to 0px, left and right to auto  & 10px sets the margin of the bottom of the element to 10px */
+    display: none; /* display none property is used to hide the element */
+}
+
+#hourly-forecast{
+    display: flex; /* display at flex's functionality is to make the parent element a flex container */
+    justify-content: space-between; /* justify-content space-between property makes the flex container's items align in the space between */
+    margin-top: 50px; /* margin-top 50px property sets the margin of the top of the element to 50px */
+    overflow-x: auto; /* overflow-x auto property is used to make the element horizontally scrollable */
+    white-space: nowrap; /* white-space nowrap property is used to prevent the text from wrapping , wrapping means the text will go to the next line */;
+}
+/* we use . for classes & # for id's , the difference between classes and id is that classes can be used multiple times in the same document while id's can be used only once in the same document */
+.hourly-item { 
+    flex: 0 0 auto; /* flex 0 0 auto property is used to set the flex-grow, flex-shrink, and flex-basis properties */
+    width: 80px; /* width property is used to set the width of an element */
+    display: flex; /* display at flex's functionality is to make the parent element a flex container */
+    flex-direction: column; /* flex-direction column property is used to make the flex container's items align in a column */
+    align-items: center; /* align-items center property makes  the flex container's items align in the center of the cross axis */
+    margin-right: 10px; /* margin-right 10px property sets the margin of the right of the element to 10px */
+    color: white; /* color property is used to set the color of the text */
+}
+
+.hourly-item img {
+    width: 30px; /* width property is used to set the width of an element */
+    height: 30px; /* height property is used to set the height of an element */
+    margin-bottom: 5px; /* margin-bottom 5px property sets the margin of the bottom of the element to 5px */
+}
+
+.hourly-heading {
+    color: white; /* color property is used to set the color of the text */
+    margin-top: 10px; /* margin-top 10px property sets the margin of the top of the element to 10px */
+}
+#footer-text::after { /* ::after is a pseudo-element which allows you to insert content onto a page from CSS (without it needing to be in the HTML) */
+    content: '|';
+    animation: blink 0.1s infinite; /* blink 1s infinite property is used to set the animation of the element to blink for 1 second infinitely */
+    color: white;
+}
+
+@keyframes blink { /* @keyframes rule is used to create animations */
+    0%, 50% { /* 0% and 50% are the keyframes of the animation */
+        opacity: 1; /* opacity property is used to set the transparency of an element */
+    }
+    50%, 100% {     /* we make 0,50 to 50,100 because we want the text to blink 0,50 is the first half of the animation and 50,100 is the second half of the animation */
+        opacity: 0; /*we make opacity from 1 to 0 because we want the text to blink */
+    }
+}
+
